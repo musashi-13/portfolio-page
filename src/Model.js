@@ -1,13 +1,13 @@
 import React from 'react';
 import { useFrame } from '@react-three/fiber';
 import { useGLTF } from '@react-three/drei';
-
 function easeInOutCubic(t) {
+  
   return t < 0.5 ? 4 * t ** 3 : 1 - Math.pow(-2 * t + 2, 3) / 2;
 }
 
 export default function Model(props) {
-  const { scene } = useGLTF('build/scene.glb');
+  const { scene } = useGLTF('../public/scene.glb');
   const modelRef = React.useRef();
 
   const startRotation = [0.2, 0.3, 0.3];
