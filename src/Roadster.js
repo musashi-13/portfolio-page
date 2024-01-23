@@ -3,10 +3,9 @@ import { useGLTF } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 
 function Roadster(props) {
-  const { scene } = useGLTF('/roadster.glb');
+  const { scene } = useGLTF('build/roadster.glb');
   const modelRef = React.useRef();
 
-  // Animation parameters
   const amplitude = 0.02; // Floating amplitude
   const frequency = 1.5; // Floating frequency  
 

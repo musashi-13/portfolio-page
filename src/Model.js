@@ -7,7 +7,7 @@ function easeInOutCubic(t) {
 }
 
 export default function Model(props) {
-  const { scene } = useGLTF('/scene.glb');
+  const { scene } = useGLTF('build/scene.glb');
   const modelRef = React.useRef();
 
   const startRotation = [0.2, 0.3, 0.3];
