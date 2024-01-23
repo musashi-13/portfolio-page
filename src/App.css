@@ -1,38 +1,141 @@
 .App {
-  text-align: center;
+  background-color: #0f0f0f;
+  color: #f0f0f0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.spinner {
+  width: 70.4px;
+  height: 70.4px;
+  --clr: rgb(225,211,253);
+  --clr-alpha: rgb(225,211,253,.1);
+  animation: spinner 1.6s infinite ease;
+  transform-style: preserve-3d;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.spinner > div {
+  background-color: var(--clr-alpha);
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  border: 3.5px solid var(--clr);
+}
+.spinner div:nth-of-type(1) {
+  transform: translateZ(-35.2px) rotateY(180deg);
+}
+.spinner div:nth-of-type(2) {
+  transform: rotateY(-270deg) translateX(50%);
+  transform-origin: top right;
+}
+.spinner div:nth-of-type(3) {
+  transform: rotateY(270deg) translateX(-50%);
+  transform-origin: center left;
+}
+.spinner div:nth-of-type(4) {
+  transform: rotateX(90deg) translateY(-50%);
+  transform-origin: top center;
+}
+.spinner div:nth-of-type(5) {
+  transform: rotateX(-90deg) translateY(50%);
+  transform-origin: bottom center;
+}
+.spinner div:nth-of-type(6) {
+  transform: translateZ(35.2px);
+}
+@keyframes spinner {
+  0% {
+    transform: rotate(45deg) rotateX(-25deg) rotateY(25deg);
+  }
+  50% {
+    transform: rotate(45deg) rotateX(-385deg) rotateY(25deg);
+  }
+  100% {
+    transform: rotate(45deg) rotateX(-385deg) rotateY(385deg);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.nav-bar{
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(10, 0, 10);
+  padding: 0.5em;
+  box-shadow: 0px 4px 30px 15px rgba(10,0,10,1);
+  -webkit-box-shadow: 0px 4px 30px 15px rgba(10,0,10,1);
+  -moz-box-shadow: 0px 4px 30px 15px rgba(10,0,10,1);
+}
+.container-menu-buttons{
+  padding-top: 0.5em;
+  display: flex;
+  justify-content: space-around;
+  width: 20em;
+  gap: 3em;
+  transform: translate(-30px);
+}
+.nav-bar-logo{
+  padding-top: 8px;
+  padding-left: 30px;
+}
+.menu-button{
+  font-size: 20px;
+  font-weight: 300;
+  width: fit-content;
+  height: 1.5em;
+  padding: 0;
+  border: 0;  
+  background-color: rgb(10, 0, 10);
+  color: #f0f0f0;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.theme-checkbox {
+  --toggle-size: 8px;
+  appearance: none;
+  width: 6.25em;
+  height: 3.125em;
+  background: linear-gradient(to right, #efefef 50%, #2a2a2a 50%) no-repeat;
+  background-size: 205%;
+  background-position: 0;
+  transition: 0.4s;
+  border-radius: 99em;
+  position: absolute;
+  top: 12px;
+  cursor: pointer;
+  font-size: var(--toggle-size);
+} 
+.theme-checkbox::before {
+  content: "";
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 4px;
+  left: 5px;
+  background: linear-gradient(to right, #efefef 50%, #2a2a2a 50%) no-repeat;
+  background-size: 205%;
+  background-position: 100%;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+.theme-checkbox:checked::before {
+  left: calc(100% - 20px - 3.5px);
+  background-position: 0;
+}
+.theme-checkbox:checked {
+  background-position: 100%;
+}
+
+.section-one{
+  position: relative;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  top: 15px;
+  font-size: 18px;
+  flex-direction: column;
 }
 
-.App-link {
-  color: #61dafb;
+@keyframes circle-1 {
+  0%{left: 62%; top: 100px}
+  100%{left: 55%; top: 160px;}
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@keyframes circle-2 {
+  0%{left: 62%; top: 100px}
+  100%{left: 70%; top: 230px;}
 }
