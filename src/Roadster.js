@@ -3,7 +3,7 @@ import { useGLTF } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 
 function Roadster(props) {
-  const glbPath = process.env.PUBLIC_URL + "/roadster.glb";
+  const glbPath = process.env.PUBLIC_URL + "/myavatar.glb";
   const { scene } = useGLTF(glbPath);
   const modelRef = React.useRef();
 
