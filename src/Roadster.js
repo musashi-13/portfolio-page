@@ -3,7 +3,8 @@ import { useGLTF } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 
 function Roadster(props) {
-  const { scene } = useGLTF('../public/roadster.glb');
+  const glbPath = process.env.PUBLIC_URL + "/roadster.glb";
+  const { scene } = useGLTF(glbPath);
   const modelRef = React.useRef();
 
   const amplitude = 0.02; // Floating amplitude
